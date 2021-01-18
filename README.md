@@ -10,7 +10,7 @@ This project created to demonstrate the usage of layers and common modules
 - [GS layers project](https://bitbucket.org/goldenscent/lambda-layers/src/master/)
 
 ## Debug
-- Add debug configuration
+- Add debug configuration in `.vscode/launch.json`
 ```json
 {
     "version": "0.2.0",
@@ -33,7 +33,7 @@ This project created to demonstrate the usage of layers and common modules
 ```
 - install ptvsd `pip install ptvsd --system -t ./src`
 - add these line on top of function file
-```bash
+```python
 import ptvsd
 ptvsd.enable_attach(address=('0.0.0.0', 5890), redirect_output=True)
 ptvsd.wait_for_attach()
