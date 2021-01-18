@@ -1,6 +1,7 @@
 #!/bin/bash
 if [ ! -d "./src/ptvsd" ]
 then
+    echo 'Installing ptvsd module ...'
     pip install ptvsd --system -t ./src
 fi
 sam local invoke -e event.json "Demo" -d 5890 \
