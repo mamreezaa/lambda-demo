@@ -1,4 +1,12 @@
 #!/bin/bash
+if [ -d "./src/ptvsd" ]
+then
+    rm -rf src/ptvsd*
+fi
+if [ -d "./src/__pycache__" ]
+then
+    rm -rf src/__pycache__*
+fi
 sam deploy --config-file=samconfig.dev.toml \
 --profile=sam-dev-deployer \
 --config-env=dev \

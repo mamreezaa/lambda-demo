@@ -1,6 +1,10 @@
 from mock import response
+import ptvsd
 
-def handler(_, __):
+ptvsd.enable_attach(address=('0.0.0.0', 5890), redirect_output=True)
+ptvsd.wait_for_attach()
+
+def handler(event, context):
     try:
         return {
             "statusCode": 200,

@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ ! -d "./src/ptvsd" ]
+then
+    pip install ptvsd --system -t ./src
+fi
 sam local invoke -e event.json "Demo" -d 5890 \
 --env-vars=env.json \
 --profile=sam-dev-deployer \

@@ -143,3 +143,4 @@ dmypy.json
 .prof
 
 .vscode
+src/ptvsd*
