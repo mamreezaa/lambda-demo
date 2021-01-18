@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+
+Globals:
+  Function:
+    Runtime: python3.7
+    CodeUri: src
+    Timeout: 60
+    MemorySize: 128
+    Layers:
+        - !Ref PythonDepPack1
+        - !Ref GoldenScentPyLayer
+    Environment:
+      Variables:
+        DEFAULT_ENV: !Ref DefaultEnv
+Parameters:
+  PythonDepPack1:
+    Type: String
+    Description: Python Runtime Layer version
+  GoldenScentPyLayer:
+    Type: String
+    Description: Golden scent python Layer version
+  LambdaExeRole:
+    Type: String
+    Description: Lambda executor role
+  DefaultEnv:
+    Type: String
+    Description: DEV
+
+Resources:
+  Demo:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: demo
+      Description: demo function
+      Handler: demo.handler
+      Runtime: python3.7
+      CodeUri: src
+      MemorySize: 128
+      Timeout: 30
+      Role: !Ref LambdaExeRole
+      AutoPublishAlias: live

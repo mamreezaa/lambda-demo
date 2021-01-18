@@ -1,0 +1,10 @@
+version = 0.1
+[dev]
+[dev.deploy]
+[dev.deploy.parameters]
+stack_name = "demo-stack"
+s3_bucket = "gs-dev-sam-ytc5q"
+s3_prefix = "gs-sam-apps"
+region = "eu-west-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
