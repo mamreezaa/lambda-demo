@@ -3,6 +3,7 @@ from typing import (
     Any
 )
 import emoji
+#import goldenscentpy.mysql.connection as gsmysqlcon
 
 response: Dict[str, Any] = {
     'name' : 'mam',
