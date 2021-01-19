@@ -9,6 +9,8 @@ This project created to demonstrate the usage of layers and common modules
 - Pytest
 - [GS layers project](https://bitbucket.org/goldenscent/lambda-layers/src/master/)
 
+## Run locally with local layer
+- `pip install -r /home/mam/projects/gs/lambda-layers/layers/python3.7DepPack1/requirements.txt`
 ## Debug
 - Add debug configuration in `.vscode/launch.json`
 ```json
@@ -44,7 +46,7 @@ ptvsd.wait_for_attach()
 ## Useful commands
 | Commands or sh   |      Description      |
 |----------|:-------------:|
-| export PYTHONPATH=./src:$PYTHONPATH |  Let python interpreter know the src module |
+| export PYTHONPATH=./src:/home/mam/projects/gs/lambda-layers:$PYTHONPATH |  Let python interpreter know the src module |
 | python -m pytest | Run unite test |
 | ./invoke.sh  |    Invoke function locally   |
 | ./dev-deploy.sh | Deploy the function to de aws account |
